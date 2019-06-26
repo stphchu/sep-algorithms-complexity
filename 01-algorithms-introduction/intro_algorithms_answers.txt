@@ -1,0 +1,35 @@
+## Calculating a Total with Tips ##
+
+IF service was great THEN
+     SET tip to 1.20
+ELSEIF service was bad THEN
+     SET tip to 1
+ELSE
+     SET tip to 1.15
+END
+
+RETURN tip times base total
+
+
+
+## Getting to Work ##
+
+CASE commute OF
+	schedule before 8am	: car
+        schedule after 8am	: shuttle
+
+	OTHERS:
+	stay home
+ENDCASE
+
+
+
+## Stress Coping ##
+
+SET stress level to 100
+REPEAT
+	exercise
+	meditate
+	listen to music
+	eat
+UNTIL stress level < 70
