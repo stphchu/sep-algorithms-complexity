@@ -1,0 +1,59 @@
+1. Describe an analogy for relating an algorithm that has efficiency O(1) and another algorithm that has O(2n).
+  - An algorithm that has efficiency 0(1) is like a car on cruise control going down an empty road; an algorithm
+    that has an efficiency of 0(2n) is like a car moving in heavy traffic.
+
+2. In plain English, what is the best case scenario for binary search?
+  - The best case scenario for a binary search would be if the target value is located in the middle of the rest
+    of the values (that is, it would be the first one found).
+
+3. In plain English, what is the worst-case scenario for binary search?
+  - The worst-case scenario for binary search would be if the target value is either the first or last in the array.
+
+4. In plain English, what is the bounded-case scenario for binary search?
+  - The bounded-case scenario for binary search would be a value that's not located in the first, middle, or last
+    position of an array.
+
+5. Create a graph using the data below. Here's a CSV with the values you'll need.
+  - (See attached)
+
+6. What is the limit of the function above as n approaches infinity?
+  - f(n) = 2^n
+
+7. What is the Big-O of an algorithm that has the data points above?
+  - O(2^n)
+
+8. Write a Ruby method that takes a number n. This method must print the worst-case number of iterations
+ for linear search to find an item in collections of size one to n. Use it to generate a table of worst-case
+ iterations of collections up to size 10.
+
+ ```
+def linear_bigO(n)
+  return n unless !(n.is_a? Integer)
+  return "Invalid input"
+end
+ ```
+[n]  |  [Iterations]
+ 1           1
+ 2           2
+ 3           3
+ 4           4
+ 5           5
+ 6           6
+ 7           7
+ 8           8
+ 9           9
+ 10          10
+
+
+9. Create a graph from the output using Google Sheets or other graphing software. Analyze the graph and denote
+its Big-O somewhere on the graph.
+  - (See attached)
+
+10. What is the Big-O of binary search?
+  - O(log n)
+
+11. What is the Big-Ω of binary search?
+  - O(1)
+
+12. What is the Big-Ө of binary search?
+  - O(log n)
