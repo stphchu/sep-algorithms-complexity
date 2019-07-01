@@ -1,0 +1,5 @@
+The Big-O complexity for
+
+- `improving_complexity_version_one.rb` is `O(n)`.
+- `improving_complexity_version_two.rb` is `O(nlog(n))`.
+- `improving_complexity_version_three.rb` is `O(nlog(n))` (this is based on Ruby's `.sort` method using quick sort).
