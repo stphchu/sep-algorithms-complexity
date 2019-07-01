@@ -53,7 +53,8 @@ def numbers(n)
 end
 ```
 
-  - The Big-O of that algorithm is O(n) because the recursion is linear.
+  - The Big-O of that algorithm is O(2n) because the recursion is growing at the rate 2n-3
+  (removing the constant of -3).
 
 5. What's the Big-O of the following algorithm? Submit your work and reasoning with your solution.
 ```
