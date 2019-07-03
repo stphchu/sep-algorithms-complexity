@@ -6,7 +6,7 @@ def poorly_written_ruby(*arrays)
 
    for val in combined_array
      i = 0
-     while i < sorted_array.length
+     while i <= sorted_array.length
        if i == sorted_array.length
          sorted_array << val
          break
