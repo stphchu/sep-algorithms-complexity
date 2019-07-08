@@ -1,3 +1,5 @@
+# Improving Space Complexity
+
 def poorly_written_ruby(*arrays)
   array = arrays.concat.flatten
   return array if array.length <= 1
