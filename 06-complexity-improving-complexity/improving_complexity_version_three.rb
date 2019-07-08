@@ -1,8 +1,15 @@
-# Improved Space Complexity
-
 def poorly_written_ruby(*arrays)
-  array_hash = {}
-  array_hash[:combined_array] = arrays.concat.flatten
+  array = arrays.concat.flatten
+  return array if array.length <= 1
 
-  array_hash[:sorted_array] = array_hash[:combined_array].sort
+  pivot = array.delete_at(rand(array.length))
+  left = []
+  right = []
+
+  array.each do |x|
+    x <= pivot ? left << x : right << x
+  end
+
+  return *poorly_written_ruby(left), pivot ,*poorly_written_ruby(right)
+
 end
