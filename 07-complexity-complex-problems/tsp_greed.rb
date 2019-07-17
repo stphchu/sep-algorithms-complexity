@@ -1,27 +1,10 @@
-def nearest_possible_neighbor(current_city)
-  neighbor_cities = current_city.neighbors
-  nearest_neighbor = neighbor_cities[0]
-
-  for current_neighbor in neighbor_cities
-    if (current_neighbor.visited == false) && (current_neighbor.distance < nearest_neighbor.distance)
-      current_neighbor = nearest_neighbor
-    end
-  end
-  nearest_neighbor
-end
-
-#####
-
 class City
   attr_accessor :name
   attr_accessor :long_lat
-  attr_accessor :visited
-  attr_accessor :neighbors
 
   def initialize(name, long, lat)
     @name = name
     @long_lat = [long,lat]
-    @visited = false
   end
 end
 
@@ -45,8 +28,29 @@ def distance (loc1, loc2)
   rm * c
 end
 
-def tsp_greed(current,cities)
+def nearest_possible_neighbor(current,cities)
+    neighbor_cities = cities
+    nearest_neighbor = cities[0]
 
+    neighbor_cities.each do |current_neighbor|
+      if distance(current,current_neighbor) < distance(current,nearest_neighbor)
+       nearest_neighbor = current_neighbor
+      end
+    end
+  return nearest_neighbor
+end
+
+def tsp_greed(current,cities)
+  path = [current.name]
+  cities.delete(current)
+
+  for city in 0..cities.length-1
+    nn = nearest_possible_neighbor(current,cities)
+    path << nn.name
+    current = nn
+    cities.delete(nn)
+  end
+  path << path.first
 end
 
 sf = City.new("san francisco", 37.7749, 122.4194)
@@ -57,6 +61,5 @@ oak = City.new("oakland", 37.8044, 122.2712)
 sea = City.new("seattle", 47.6062, 122.3321)
 
 cities = [sf,la,lv,pdx,oak,sea]
-
 
 tsp_greed(sf, cities)
