@@ -1,0 +1,10 @@
+user          system      total       real
+Quick Sort    0.000100    0.000010    0.000110 (0.000104)
+Heap Sort     0.000009    0.000001    0.000010 (0.000009)
+Bucket Sort   0.000074    0.000007    0.000081 (0.000081)
+
+-----------------------------------------------------------
+
+Some algorithms are faster than others because of their varying time complexities.
+The bucket sort, for example, has to perform fewer comparisons than quick sort when
+sorting through the array because the values are grouped together.
